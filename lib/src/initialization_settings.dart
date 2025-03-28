@@ -8,7 +8,6 @@ class InitializationSettings {
     this.android,
     this.iOS,
     this.macOS,
-    this.linux,
   });
 
   /// Settings for Android.
