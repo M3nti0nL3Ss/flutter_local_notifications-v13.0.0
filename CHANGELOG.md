@@ -1,4 +1,6 @@
 # [13.0.0]
+stripping linux completly
+# [13.0.0]
 remove support for linux and macos
 # [13.0.0]
 
