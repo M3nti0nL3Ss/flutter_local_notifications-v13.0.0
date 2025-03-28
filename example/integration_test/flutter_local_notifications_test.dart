@@ -14,16 +14,10 @@ void main() {
       DarwinInitializationSettings();
   const DarwinInitializationSettings initializationSettingsMacOS =
       DarwinInitializationSettings();
-  final LinuxInitializationSettings initializationSettingsLinux =
-      LinuxInitializationSettings(
-    defaultActionName: 'Open notification',
-    defaultIcon: AssetsLinuxIcon('icons/app_icon.png'),
-  );
   final InitializationSettings initializationSettings = InitializationSettings(
       android: initializationSettingsAndroid,
       iOS: initializationSettingsIOS,
-      macOS: initializationSettingsMacOS,
-      linux: initializationSettingsLinux);
+      macOS: initializationSettingsMacOS);
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
   group('initialize()', () {
     setUpAll(() async {
@@ -53,10 +47,6 @@ void main() {
         if (Platform.isIOS) {
           expect(e.message,
               'iOS settings must be set when targeting iOS platform.');
-        }
-        if (Platform.isLinux) {
-          expect(e.message,
-              'Linux settings must be set when targeting Linux platform.');
         }
         if (Platform.isMacOS) {
           expect(e.message,
